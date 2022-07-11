@@ -1,0 +1,21 @@
+- name: Home
+  link: /
+- name: About us
+  link: /about
+- name: Our offerings
+  link: /our-offerings
+- name: Unique deliverables
+  link: /unique-deliverables
+- name: Knowledge center
+  link: /#
+  links:
+    - name: Rainwater harvesting-the concept
+      link: /rainwater-harvesting-the-concept
+    - name: Benefits of rainwater harvesting
+      link: /benefits-of-rainwater-harvesting
+    - name: Work methodology
+      link: /work-methodology
+- name: Our customers
+  link: /our-customers
+- name: Contact us
+  link: /contact

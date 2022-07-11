@@ -1,0 +1,115 @@
+<header id="header" class="header-one">
+  <div class="bg-white">
+    <div class="container">
+      <div class="logo-area">
+          <div class="row align-items-center">
+            <div class="logo col-lg-4 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
+                <a class="d-block" href="/">
+                  <!-- <img loading="lazy" src="images/logo.png" alt="Constra"> -->
+                  <h2 class="page-title">Jaldhara</h2>
+                  <h4 class="page-title-caption">Water Harvesting Solutions</h4>
+                </a>
+            </div><!-- logo end -->
+  
+            <div class="col-lg-8 header-right">
+                <ul class="top-info-box">
+                  <li>
+                    <div class="info-box">
+                      <div class="info-box-content">
+                          <p class="info-box-title">Call Us</p>
+                          <p class="info-box-subtitle"><a href="tel:+919460873465">(+91) 94608 73465</a></p>
+                          <p class="info-box-subtitle d-block d-lg-none"><a href="tel:+917665073545">(+91) 76650 73545</a></p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="last">
+                    <div class="info-box">
+                      <div class="info-box-content">
+                          <p class="info-box-title">Email Us</p>
+                          <p class="info-box-subtitle"><a href="mailto:support@jaldharawaterharvesting.in">support@jaldharawaterharvesting.in</a></p>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- <li class="header-get-a-quote">
+                    <a class="btn btn-primary" href="contact.html">Get A Quote</a>
+                  </li> -->
+                </ul><!-- Ul end -->
+            </div><!-- header right end -->
+          </div><!-- logo area end -->
+  
+      </div><!-- Row end -->
+    </div><!-- Container end -->
+  </div>
+
+  <div class="site-navigation">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <!-- <h3 class="navbar-brand d-lg-none" style="margin:0;max-width:calc(100% - 40px); white-space: normal">Jaldhara water harvesting</h3> -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbar-collapse" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav mr-auto">
+
+                      {% for item in site.data.navigation %}
+                        {% if page.url == '/' %}
+                          {% assign currentLink = item.link %}
+                        {% else %}
+                          {% assign currentLink = item.link | append: '.html' %}
+                        {% endif %}
+                        <li class="nav-item dropdown {% if (page.url == currentLink) %} active {% endif %}">
+                          {% if item.link != '/#'%}
+                            <a class="nav-link" href="{{ item.link }}">
+                              {{ item.name }}
+                            </a>
+
+                          {% else %}
+                            <a class="nav-link dropdown-toggle" href="{{ item.link }}" data-toggle="dropdown">
+                              {{ item.name }} <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                              {% for innerItem in item.links %}
+                                {% assign currentInnerLink = innerItem.link | append: '.html' %}
+                                <li>
+                                  <a {% if page.url == currentInnerLink %} class="active" {% endif %}
+                                    href="{{innerItem.link}}"
+                                  >
+                                    {{innerItem.name}}
+                                  </a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          {% endif %}
+                        </li>
+                      {% endfor %}
+                      
+                    </ul>
+                </div>
+              </nav>
+          </div>
+          <!--/ Col end -->
+        </div>
+        <!--/ Row end -->
+    </div>
+    <!--/ Container end -->
+
+  </div>
+  <!--/ Navigation end -->
+</header>
+<!-- <div id="banner-area" class="banner-area">
+  <div class="banner-text">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+              <div class="banner-heading">
+                <h1 class="banner-title">About</h1>
+                
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div> -->
